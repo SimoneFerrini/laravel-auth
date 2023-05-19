@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified'])->prefix('admin')->name('admin')->group(function(){
     
-    Route::resource('posts', PostController::class)->middleware(['auth', 'verified']);
+    Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
     Route::get('/admin', [DashboardController::class, 'home']);
 });
 
