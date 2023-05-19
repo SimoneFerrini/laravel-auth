@@ -3,7 +3,7 @@
 @section('content')
     <div class="bg-black">
 
-        <table class="mt-5 table table-stiped bg-dark text-white">
+        <table class="mt-5 table  bg-dark text-white">
             <thead>
                 <th>
                     Titolo
@@ -15,7 +15,7 @@
                     Slug
                 </th>
             <th>
-                Link
+                Download
             </th>
         </thead>
         
@@ -25,7 +25,7 @@
                 <td>{{$project->title}}</td>
                 <td>{{$project->description}}</td>
                 <td>{{$project->slug}}</td>
-                <td><a href="{{$project->link}}"><i class="fa-solid fa-file-arrow-down"></i></a></td>
+                <td><a href="{{route('admin.project.show'), $project->slug}}"><i class="fa-solid fa-file-arrow-down"></i></a></td>
             </tr>
             @endforeach
         </tbody>
