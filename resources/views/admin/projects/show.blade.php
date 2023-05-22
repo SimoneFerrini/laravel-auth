@@ -9,6 +9,10 @@
         <br>
         <p>{{$project->description}}</p>
         <hr>
-        <a href="{{$project->link}}">Scarica progetto</a>
+        <a href="{{$project->link}}">Scarica progetto</a><br>
+        <a href="{{route('admin.projects.index')}}">Torna alla lista dei progetti</a>
+        <div>
+            <a href="{{route('admin.projects.edit', $project->slug)}}"><button class="btn btn-primary">Modifica</button></a>
+        </div>
     </div>
 @endsection
